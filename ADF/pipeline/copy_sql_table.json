@@ -32,7 +32,8 @@
 						"parameters": {
 							"filename": "Table_Source_SQL.json"
 						}
-					}
+					},
+					"firstRowOnly": false
 				}
 			},
 			{
@@ -42,7 +43,7 @@
 					{
 						"activity": "Lookup_Metadata_SQL",
 						"dependencyConditions": [
-							"Skipped"
+							"Succeeded"
 						]
 					}
 				],
