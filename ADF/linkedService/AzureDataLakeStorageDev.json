@@ -1,0 +1,22 @@
+{
+	"name": "AzureDataLakeStorageDev",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureBlobFS",
+		"typeProperties": {
+			"url": "https://airlinedatalakedev.dfs.core.windows.net/",
+			"tenant": "fd2e37d1-f253-4668-bef8-405466d1b986",
+			"servicePrincipalId": "47ebd300-1259-4a10-a976-674fa4927141",
+			"servicePrincipalCredentialType": "ServicePrincipalKey",
+			"servicePrincipalCredential": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "AzureKeyVault1",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": "data-app-secret"
+			}
+		}
+	}
+}

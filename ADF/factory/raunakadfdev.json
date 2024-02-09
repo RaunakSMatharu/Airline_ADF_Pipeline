@@ -1,0 +1,9 @@
+{
+	"name": "raunakadfdev",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "fca7fd7b-19f2-47b1-a1b0-a7ed7377ce74",
+		"tenantId": "fd2e37d1-f253-4668-bef8-405466d1b986"
+	}
+}
