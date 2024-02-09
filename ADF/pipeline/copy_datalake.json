@@ -133,10 +133,6 @@
 													"directory": {
 														"value": "@concat(item().directory_sink,'/Date_Part=',formatDateTime(utcNow(),'yyyy-MM-dd'))",
 														"type": "Expression"
-													},
-													"filename": {
-														"value": "@item().File_name_sink",
-														"type": "Expression"
 													}
 												}
 											}
