@@ -1,0 +1,39 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "raunakadfdev"
+		},
+		"AzureSqlDatabase_Source_connectionString": {
+			"value": "Integrated Security=False;Encrypt=True;Connection Timeout=30;Data Source=raunakairplanedev.database.windows.net;Initial Catalog=airplanedevdb;User ID=raunak_admin"
+		},
+		"AzureDataLakeStorage1_properties_typeProperties_url": {
+			"value": "https://raunakdatalakesource.dfs.core.windows.net"
+		},
+		"AzureDataLakeStorage1_properties_typeProperties_tenant": {
+			"value": "fd2e37d1-f253-4668-bef8-405466d1b986"
+		},
+		"AzureDataLakeStorage1_properties_typeProperties_servicePrincipalId": {
+			"value": "47ebd300-1259-4a10-a976-674fa4927141"
+		},
+		"AzureDataLakeStorageDev_properties_typeProperties_url": {
+			"value": "https://airlinedatalakedev.dfs.core.windows.net/"
+		},
+		"AzureDataLakeStorageDev_properties_typeProperties_tenant": {
+			"value": "fd2e37d1-f253-4668-bef8-405466d1b986"
+		},
+		"AzureDataLakeStorageDev_properties_typeProperties_servicePrincipalId": {
+			"value": "47ebd300-1259-4a10-a976-674fa4927141"
+		},
+		"AzureKeyVault1_properties_typeProperties_baseUrl": {
+			"value": "https://airlinekeyvaultdev.vault.azure.net/"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}
