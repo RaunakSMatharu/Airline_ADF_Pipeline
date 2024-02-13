@@ -1,0 +1,33 @@
+{
+	"name": "Cancellation_sink",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureDataLakeStorageDev",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": {
+					"value": "Cancellation.csv",
+					"type": "Expression"
+				},
+				"folderPath": {
+					"value": "@concat('Cancellation','/Date_Part=',formatDateTime(utcNow(),'yyyy-MM-dd'))",
+					"type": "Expression"
+				},
+				"fileSystem": {
+					"value": "raw",
+					"type": "Expression"
+				}
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}
