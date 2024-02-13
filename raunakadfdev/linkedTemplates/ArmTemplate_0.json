@@ -177,9 +177,6 @@
 					},
 					"directory": {
 						"type": "string"
-					},
-					"filename": {
-						"type": "string"
 					}
 				},
 				"annotations": [],
@@ -187,10 +184,6 @@
 				"typeProperties": {
 					"location": {
 						"type": "AzureBlobFSLocation",
-						"fileName": {
-							"value": "@dataset().filename",
-							"type": "Expression"
-						},
 						"folderPath": {
 							"value": "@dataset().directory",
 							"type": "Expression"
@@ -579,10 +572,6 @@
 															},
 															"directory": {
 																"value": "@concat(item().directory_sink,'/Date_Part=',formatDateTime(utcNow(),'yyyy-MM-dd'))",
-																"type": "Expression"
-															},
-															"filename": {
-																"value": "@item().File_name_sink",
 																"type": "Expression"
 															}
 														}
