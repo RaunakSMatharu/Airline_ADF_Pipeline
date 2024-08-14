@@ -1,0 +1,9 @@
+{
+	"name": "adf-raunak",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "c336f1e5-c31e-430d-bb8e-6074e6ab2d1a",
+		"tenantId": "cc112969-11d6-45fd-9020-1e384ef15c14"
+	}
+}

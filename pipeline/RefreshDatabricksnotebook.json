@@ -1,0 +1,41 @@
+{
+	"name": "RefreshDatabricksnotebook",
+	"properties": {
+		"activities": [
+			{
+				"name": "Notebook1",
+				"type": "DatabricksNotebook",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"notebookPath": "/Workspace/Repos/mihirpatkar28@gmail.com/airline/Airline-Git/Run_notebooks",
+					"baseParameters": {
+						"Layer_name": {
+							"value": "@pipeline().parameters.layer_name",
+							"type": "Expression"
+						}
+					}
+				},
+				"linkedServiceName": {
+					"referenceName": "AzureDatabricks_noteBook_link",
+					"type": "LinkedServiceReference"
+				}
+			}
+		],
+		"parameters": {
+			"layer_name": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"lastPublishTime": "2024-08-12T16:32:23Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}
