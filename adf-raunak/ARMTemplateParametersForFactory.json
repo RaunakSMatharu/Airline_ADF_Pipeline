@@ -1,0 +1,57 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "adf-raunak"
+		},
+		"AzureSqlDatabase_source_password": {
+			"value": ""
+		},
+		"AzureDataLakeStorage_sink_gen2_properties_typeProperties_url": {
+			"value": "https://sinkgen2acc.dfs.core.windows.net/"
+		},
+		"AzureDataLakeStorage_sink_gen2_properties_typeProperties_tenant": {
+			"value": "cc112969-11d6-45fd-9020-1e384ef15c14"
+		},
+		"AzureDataLakeStorage_sink_gen2_properties_typeProperties_servicePrincipalId": {
+			"value": "13aa6c3b-c065-4e00-a12b-2bd8dd0aaa91 "
+		},
+		"AzureDataLakeStorage_source_gen2_properties_typeProperties_url": {
+			"value": "https://sourcestoraccgen2.dfs.core.windows.net/"
+		},
+		"AzureDataLakeStorage_source_gen2_properties_typeProperties_tenant": {
+			"value": "cc112969-11d6-45fd-9020-1e384ef15c14"
+		},
+		"AzureDataLakeStorage_source_gen2_properties_typeProperties_servicePrincipalId": {
+			"value": "13aa6c3b-c065-4e00-a12b-2bd8dd0aaa91 "
+		},
+		"AzureDatabricks_noteBook_link_properties_typeProperties_existingClusterId": {
+			"value": "0808-062936-afn9l6m0"
+		},
+		"AzureKeyVault_properties_typeProperties_baseUrl": {
+			"value": "https://raunak-key.vault.azure.net/"
+		},
+		"AzureSqlDatabase_sink_link_properties_typeProperties_server": {
+			"value": "raunakdevairline.database.windows.net"
+		},
+		"AzureSqlDatabase_sink_link_properties_typeProperties_database": {
+			"value": "raunakdev"
+		},
+		"AzureSqlDatabase_sink_link_properties_typeProperties_userName": {
+			"value": "raunakadmin"
+		},
+		"AzureSqlDatabase_source_properties_typeProperties_server": {
+			"value": "raunakdevairline.database.windows.net"
+		},
+		"AzureSqlDatabase_source_properties_typeProperties_database": {
+			"value": "raunakdev"
+		},
+		"AzureSqlDatabase_source_properties_typeProperties_userName": {
+			"value": "raunakadmin"
+		},
+		"RestService_source_properties_typeProperties_url": {
+			"value": "@activity('Web1').output.value"
+		}
+	}
+}

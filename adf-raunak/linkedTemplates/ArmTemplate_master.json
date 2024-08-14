@@ -1,0 +1,174 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "adf-raunak"
+		},
+		"AzureSqlDatabase_source_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'AzureSqlDatabase_source'"
+		},
+		"AzureDataLakeStorage_sink_gen2_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://sinkgen2acc.dfs.core.windows.net/"
+		},
+		"AzureDataLakeStorage_sink_gen2_properties_typeProperties_tenant": {
+			"type": "string",
+			"defaultValue": "cc112969-11d6-45fd-9020-1e384ef15c14"
+		},
+		"AzureDataLakeStorage_sink_gen2_properties_typeProperties_servicePrincipalId": {
+			"type": "string",
+			"defaultValue": "13aa6c3b-c065-4e00-a12b-2bd8dd0aaa91 "
+		},
+		"AzureDataLakeStorage_source_gen2_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://sourcestoraccgen2.dfs.core.windows.net/"
+		},
+		"AzureDataLakeStorage_source_gen2_properties_typeProperties_tenant": {
+			"type": "string",
+			"defaultValue": "cc112969-11d6-45fd-9020-1e384ef15c14"
+		},
+		"AzureDataLakeStorage_source_gen2_properties_typeProperties_servicePrincipalId": {
+			"type": "string",
+			"defaultValue": "13aa6c3b-c065-4e00-a12b-2bd8dd0aaa91 "
+		},
+		"AzureDatabricks_noteBook_link_properties_typeProperties_existingClusterId": {
+			"type": "string",
+			"defaultValue": "0808-062936-afn9l6m0"
+		},
+		"AzureKeyVault_properties_typeProperties_baseUrl": {
+			"type": "string",
+			"defaultValue": "https://raunak-key.vault.azure.net/"
+		},
+		"AzureSqlDatabase_sink_link_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "raunakdevairline.database.windows.net"
+		},
+		"AzureSqlDatabase_sink_link_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "raunakdev"
+		},
+		"AzureSqlDatabase_sink_link_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "raunakadmin"
+		},
+		"AzureSqlDatabase_source_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "raunakdevairline.database.windows.net"
+		},
+		"AzureSqlDatabase_source_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "raunakdev"
+		},
+		"AzureSqlDatabase_source_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "raunakadmin"
+		},
+		"RestService_source_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "@activity('Web1').output.value"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "adf-raunak_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"AzureSqlDatabase_source_password": {
+						"value": "[parameters('AzureSqlDatabase_source_password')]"
+					},
+					"AzureKeyVault_properties_typeProperties_baseUrl": {
+						"value": "[parameters('AzureKeyVault_properties_typeProperties_baseUrl')]"
+					},
+					"AzureSqlDatabase_source_properties_typeProperties_server": {
+						"value": "[parameters('AzureSqlDatabase_source_properties_typeProperties_server')]"
+					},
+					"AzureSqlDatabase_source_properties_typeProperties_database": {
+						"value": "[parameters('AzureSqlDatabase_source_properties_typeProperties_database')]"
+					},
+					"AzureSqlDatabase_source_properties_typeProperties_userName": {
+						"value": "[parameters('AzureSqlDatabase_source_properties_typeProperties_userName')]"
+					},
+					"RestService_source_properties_typeProperties_url": {
+						"value": "[parameters('RestService_source_properties_typeProperties_url')]"
+					},
+					"AzureDataLakeStorage_sink_gen2_properties_typeProperties_url": {
+						"value": "[parameters('AzureDataLakeStorage_sink_gen2_properties_typeProperties_url')]"
+					},
+					"AzureDataLakeStorage_sink_gen2_properties_typeProperties_tenant": {
+						"value": "[parameters('AzureDataLakeStorage_sink_gen2_properties_typeProperties_tenant')]"
+					},
+					"AzureDataLakeStorage_sink_gen2_properties_typeProperties_servicePrincipalId": {
+						"value": "[parameters('AzureDataLakeStorage_sink_gen2_properties_typeProperties_servicePrincipalId')]"
+					},
+					"AzureDataLakeStorage_source_gen2_properties_typeProperties_url": {
+						"value": "[parameters('AzureDataLakeStorage_source_gen2_properties_typeProperties_url')]"
+					},
+					"AzureDataLakeStorage_source_gen2_properties_typeProperties_tenant": {
+						"value": "[parameters('AzureDataLakeStorage_source_gen2_properties_typeProperties_tenant')]"
+					},
+					"AzureDataLakeStorage_source_gen2_properties_typeProperties_servicePrincipalId": {
+						"value": "[parameters('AzureDataLakeStorage_source_gen2_properties_typeProperties_servicePrincipalId')]"
+					},
+					"AzureDatabricks_noteBook_link_properties_typeProperties_existingClusterId": {
+						"value": "[parameters('AzureDatabricks_noteBook_link_properties_typeProperties_existingClusterId')]"
+					},
+					"AzureSqlDatabase_sink_link_properties_typeProperties_server": {
+						"value": "[parameters('AzureSqlDatabase_sink_link_properties_typeProperties_server')]"
+					},
+					"AzureSqlDatabase_sink_link_properties_typeProperties_database": {
+						"value": "[parameters('AzureSqlDatabase_sink_link_properties_typeProperties_database')]"
+					},
+					"AzureSqlDatabase_sink_link_properties_typeProperties_userName": {
+						"value": "[parameters('AzureSqlDatabase_sink_link_properties_typeProperties_userName')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "adf-raunak_ArmTemplate_1",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_1.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'adf-raunak_ArmTemplate_0')]"
+			]
+		}
+	]
+}
